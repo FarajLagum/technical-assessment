@@ -8,7 +8,7 @@ def calculate_path_cost(path, distance_matrix):
 
 
 def get_shortest_path(distance_matrix, start_path, unvisited_vertices):
-    
+
     if len(unvisited_vertices) == 0:
         return start_path, calculate_path_cost(start_path, distance_matrix)
 
@@ -16,13 +16,13 @@ def get_shortest_path(distance_matrix, start_path, unvisited_vertices):
     shortest_distance = float('inf')
 
     for i in range(0, len(unvisited_vertices), 2):
-        
+
         for vertex in (unvisited_vertices[i], unvisited_vertices[i + 1]):
-            
+
             current_start_path = start_path + [vertex]
             current_unvisited_vertices = unvisited_vertices[:i] + \
                 unvisited_vertices[i + 2:]
-            
+
             path, distance = get_shortest_path(
                 distance_matrix, current_start_path, current_unvisited_vertices)
             if distance < shortest_distance:
@@ -39,11 +39,9 @@ if __name__ == "__main__":
     num_vertices = len(distanceMatrix)
     vertices = list(range(1, num_vertices + 1))
     start_path = []
-    start_remaining = vertices
 
     shortest_path, shortest_distance = get_shortest_path(
-        distanceMatrix, start_path, start_remaining)
+        distanceMatrix, start_path, vertices)
 
     print("Shortest Path:", shortest_path)
     print("Shortest Distance:", shortest_distance)
-    
