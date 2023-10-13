@@ -74,7 +74,10 @@ def nearest_neighbour_heuristic(distanceMatrix, vertices):
 
 if __name__ == '__main__':
 
-    from inputs import distanceMatrix as distanceMatrix
+    # from inputs import distanceMatrix as distanceMatrix
+
+    from generate_symmetric_matrix import generate_symmetric_matrix
+    distanceMatrix = generate_symmetric_matrix(100)
 
     num_vertices = len(distanceMatrix)
     vertices = list(range(1, num_vertices + 1))
@@ -84,13 +87,14 @@ if __name__ == '__main__':
 
     print("The best path:", best_path)
     print(f"The best total distance:", best_total_distance)
+    # print(distanceMatrix)
 
-    print("========================================")
-    print("Example: We choose the starting vertix:")
-    start_vertex = 1
-    best_path, total_distance = nearest_neighbour_algorithm(
-        distanceMatrix, start_vertex)
+    # print("========================================")
+    # print("Example: We choose the starting vertix:")
+    # start_vertex = 1
+    # best_path, total_distance = nearest_neighbour_algorithm(
+    #     distanceMatrix, start_vertex)
 
-    print("The path:", best_path)
-    print(
-        f"When start_vertex is {start_vertex}, the total distance:", total_distance)
+    # print("The path:", best_path)
+    # print(
+    #     f"When start_vertex is {start_vertex}, the total distance:", total_distance)
