@@ -18,10 +18,8 @@ def generate_symmetric_matrix(size):
 
     for i in range(size):
         for j in range(i, size):
-            if i == j:
-                symmetric_matrix[i][j] = 0
-            else:
-                random_value = random.randint(1, 16)
+            if i != j:
+                random_value = random.randint(1, size*size)
                 symmetric_matrix[i][j] = random_value
                 symmetric_matrix[j][i] = random_value
 
